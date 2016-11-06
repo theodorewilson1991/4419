@@ -94,6 +94,13 @@ private:
 
 };
 
+void PrintTime()
+{
+  std::cout << "The time is: "<< Simulator::Now().GetSeconds() << "\n";
+  Simulator::Schedule(Seconds(1.0), &PrintTime);
+}
+
+
 int main (int argc, char **argv)
 {
   Project2m1n1 test;
@@ -156,7 +163,7 @@ Project2m1n1::Project2m1n1 ()
 void
 Project2m1n1::ReceivePacket (Ptr <Socket> socket)
 {
-  NS_LOG_UNCOND (Simulator::Now ().GetSeconds () << " Received one packet!");
+  //NS_LOG_UNCOND (Simulator::Now ().GetSeconds () << " Received one packet!");
   Ptr <Packet> packet;
   while ((packet = socket->Recv ()))
     {
@@ -231,7 +238,7 @@ Project2m1n1::CaseRun (uint32_t nWifis, uint32_t nSources, uint32_t nSinks, doub
   std::cout << "\nStarting simulation for " << m_totalTime << " s ...\n";
 
   CheckThroughput ();
-
+  Simulator::Schedule(Seconds(1.0), &PrintTime);
   Simulator::Stop (Seconds (m_totalTime));
   Simulator::Run ();
   Simulator::Destroy ();
@@ -244,6 +251,7 @@ Project2m1n1::CreateNodes ()
   nodes.Create (m_nWifis);
   NS_ASSERT_MSG (m_nWifis > m_nSinks, "Sinks must be less or equal to the number of nodes in network");
 }
+
 
 void
 Project2m1n1::SetupMobility ()
