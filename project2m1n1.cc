@@ -36,6 +36,8 @@
 #include "ns3/wifi-module.h"
 #include "ns3/internet-module.h"
 #include "ns3/dsdv-helper.h"
+#include "ns3/flow-monitor-module.h"
+#include "ns3/flow-monitor-helper.h"
 #include <iostream>
 #include <cmath>
 
@@ -238,9 +240,16 @@ Project2m1n1::CaseRun (uint32_t nWifis, uint32_t nSources, uint32_t nSinks, doub
   std::cout << "\nStarting simulation for " << m_totalTime << " s ...\n";
 
   CheckThroughput ();
+
+  FlowMonitorHelper flowmon;
+  Ptr<FlowMonitor> monitor = flowmon.InstallAll();
+
   Simulator::Schedule(Seconds(1.0), &PrintTime);
   Simulator::Stop (Seconds (m_totalTime));
   Simulator::Run ();
+
+  monitor->SerializeToXmlFile("results.xml", true, true);
+
   Simulator::Destroy ();
 }
 
