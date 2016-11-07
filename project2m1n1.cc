@@ -211,6 +211,8 @@ Project2m1n1::CaseRun (uint32_t nWifis, uint32_t nSources, uint32_t nSinks, doub
   Ptr<FlowMonitor> flowmon;
   FlowMonitorHelper flowmonHelper;
   flowmon = flowmonHelper.InstallAll ();
+  flowmon->SetAttribute ("DelayBinWidth", DoubleValue(0.001));
+  flowmon->SetAttribute ("JitterBinWidth",DoubleValue (0.001));
 
   CheckThroughput ();
   Simulator::Schedule(Seconds(1.0), &PrintTime);
@@ -219,7 +221,7 @@ Project2m1n1::CaseRun (uint32_t nWifis, uint32_t nSources, uint32_t nSinks, doub
 
   Simulator::Stop (Seconds (m_totalTime));
   Simulator::Run ();
-  flowmon->SerializeToXmlFile ((tr_name + ".flowmon").c_str(), false, false);
+  flowmon->SerializeToXmlFile ((tr_name + ".flowmon").c_str(), true, true);
 
   Simulator::Destroy ();
 }
@@ -271,8 +273,8 @@ Project2m1n1::CreateDevices (std::string tr_name)
                                 StringValue (m_phyMode));
   devices = wifi.Install (wifiPhy, wifiMac, nodes);
 
-  AsciiTraceHelper ascii;
-  wifiPhy.EnableAsciiAll (ascii.CreateFileStream (tr_name + ".tr"));
+  //AsciiTraceHelper ascii;
+  //wifiPhy.EnableAsciiAll (ascii.CreateFileStream (tr_name + ".tr"));
   wifiPhy.EnablePcapAll (tr_name);
 }
 
