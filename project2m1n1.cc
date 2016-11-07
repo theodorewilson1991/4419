@@ -107,8 +107,8 @@ int main (int argc, char **argv)
 {
   Project2m1n1 test;
   uint32_t nWifis = 50;
-  uint32_t nSources = 30;
-  uint32_t nSinks = 30;
+  uint32_t nSources = 10;
+  uint32_t nSinks = 50;
   double totalTime = 100.0;
   std::string rate ("8kbps");
   std::string phyMode ("DsssRate11Mbps");
