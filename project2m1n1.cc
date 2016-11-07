@@ -1,33 +1,3 @@
-/* -*- Mode:C++; c-file-style:"gnu"; indent-tabs-mode:nil; -*- */
-/*
- * Copyright (c) 2010 Hemanth Narra
- *
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License version 2 as
- * published by the Free Software Foundation;
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
- *
- * Author: Hemanth Narra <hemanth@ittc.ku.com>
- *
- * James P.G. Sterbenz <jpgs@ittc.ku.edu>, director
- * ResiliNets Research Group  http://wiki.ittc.ku.edu/resilinets
- * Information and Telecommunication Technology Center (ITTC)
- * and Department of Electrical Engineering and Computer Science
- * The University of Kansas Lawrence, KS USA.
- *
- * Work supported in part by NSF FIND (Future Internet Design) Program
- * under grant CNS-0626918 (Postmodern Internet Architecture),
- * NSF grant CNS-1050226 (Multilayer Network Resilience Analysis and Experimentation on GENI),
- * US Department of Defense (DoD), and ITTC at The University of Kansas.
- */
 #include "ns3/core-module.h"
 #include "ns3/network-module.h"
 #include "ns3/applications-module.h"
@@ -36,8 +6,6 @@
 #include "ns3/wifi-module.h"
 #include "ns3/internet-module.h"
 #include "ns3/dsdv-helper.h"
-#include "ns3/flow-monitor-module.h"
-#include "ns3/flow-monitor-helper.h"
 #include <iostream>
 #include <cmath>
 
@@ -52,7 +20,6 @@ class Project2m1n1
 public:
   Project2m1n1 ();
   void CaseRun (uint32_t nWifis,
-                uint32_t nSources,
                 uint32_t nSinks,
                 double totalTime,
                 std::string rate,
@@ -66,7 +33,6 @@ public:
 
 private:
   uint32_t m_nWifis;
-  uint32_t m_nSources;
   uint32_t m_nSinks;
   double m_totalTime;
   std::string m_rate;
@@ -102,21 +68,19 @@ void PrintTime()
   Simulator::Schedule(Seconds(1.0), &PrintTime);
 }
 
-
 int main (int argc, char **argv)
 {
   Project2m1n1 test;
   uint32_t nWifis = 50;
-  uint32_t nSources = 10;
-  uint32_t nSinks = 50;
+  uint32_t nSinks = 10; //number of transmitting nodes
   double totalTime = 100.0;
   std::string rate ("8kbps");
   std::string phyMode ("DsssRate11Mbps");
   uint32_t nodeSpeed = 1; // in m/s
   std::string appl = "all";
-  uint32_t periodicUpdateInterval = 50;
+  uint32_t periodicUpdateInterval = 15;
   uint32_t settlingTime = 6;
-  double dataStart = 0.1;
+  double dataStart = 50.0;
   bool printRoutingTable = true;
   std::string CSVfileName = "Project2m1n1.csv";
 
@@ -125,7 +89,7 @@ int main (int argc, char **argv)
   cmd.AddValue ("nSinks", "Number of wifi sink nodes[Default:10]", nSinks);
   cmd.AddValue ("totalTime", "Total Simulation time[Default:100]", totalTime);
   cmd.AddValue ("phyMode", "Wifi Phy mode[Default:DsssRate11Mbps]", phyMode);
-  cmd.AddValue ("rate", "CBR traffic rate[Default:1000kbps]", rate);
+  cmd.AddValue ("rate", "CBR traffic rate[Default:8kbps]", rate);
   cmd.AddValue ("nodeSpeed", "Node speed in RandomWayPoint model[Default:10]", nodeSpeed);
   cmd.AddValue ("periodicUpdateInterval", "Periodic Interval Time[Default=15]", periodicUpdateInterval);
   cmd.AddValue ("settlingTime", "Settling Time before sending out an update for changed metric[Default=6]", settlingTime);
@@ -150,7 +114,7 @@ int main (int argc, char **argv)
   Config::SetDefault ("ns3::WifiRemoteStationManager::RtsCtsThreshold", StringValue ("2000"));
 
   test = Project2m1n1 ();
-  test.CaseRun (nWifis, nSources, nSinks, totalTime, rate, phyMode, nodeSpeed, periodicUpdateInterval,
+  test.CaseRun (nWifis, nSinks, totalTime, rate, phyMode, nodeSpeed, periodicUpdateInterval,
                 settlingTime, dataStart, printRoutingTable, CSVfileName);
 
   return 0;
@@ -165,7 +129,7 @@ Project2m1n1::Project2m1n1 ()
 void
 Project2m1n1::ReceivePacket (Ptr <Socket> socket)
 {
-  //NS_LOG_UNCOND (Simulator::Now ().GetSeconds () << " Received one packet!");
+  NS_LOG_UNCOND (Simulator::Now ().GetSeconds () << " Received one packet!");
   Ptr <Packet> packet;
   while ((packet = socket->Recv ()))
     {
@@ -203,12 +167,11 @@ Project2m1n1::SetupPacketReceive (Ipv4Address addr, Ptr <Node> node)
 }
 
 void
-Project2m1n1::CaseRun (uint32_t nWifis, uint32_t nSources, uint32_t nSinks, double totalTime, std::string rate,
+Project2m1n1::CaseRun (uint32_t nWifis, uint32_t nSinks, double totalTime, std::string rate,
                            std::string phyMode, uint32_t nodeSpeed, uint32_t periodicUpdateInterval, uint32_t settlingTime,
                            double dataStart, bool printRoutes, std::string CSVfileName)
 {
   m_nWifis = nWifis;
-  m_nSources = nSources;
   m_nSinks = nSinks;
   m_totalTime = totalTime;
   m_rate = rate;
@@ -228,7 +191,7 @@ Project2m1n1::CaseRun (uint32_t nWifis, uint32_t nSources, uint32_t nSinks, doub
   ss3 << m_totalTime;
   std::string sTotalTime = ss3.str ();
 
-  std::string tr_name = "Project2m1n1";
+  std::string tr_name = "Dsdv_Manet_" + t_nodes + "Nodes_" + sTotalTime + "SimTime";
   std::cout << "Trace file generated is " << tr_name << ".tr\n";
 
   CreateNodes ();
@@ -240,16 +203,10 @@ Project2m1n1::CaseRun (uint32_t nWifis, uint32_t nSources, uint32_t nSinks, doub
   std::cout << "\nStarting simulation for " << m_totalTime << " s ...\n";
 
   CheckThroughput ();
-
-  FlowMonitorHelper flowmon;
-  Ptr<FlowMonitor> monitor = flowmon.InstallAll();
-
   Simulator::Schedule(Seconds(1.0), &PrintTime);
+
   Simulator::Stop (Seconds (m_totalTime));
   Simulator::Run ();
-
-  monitor->SerializeToXmlFile("results.xml", true, true);
-
   Simulator::Destroy ();
 }
 
@@ -260,7 +217,6 @@ Project2m1n1::CreateNodes ()
   nodes.Create (m_nWifis);
   NS_ASSERT_MSG (m_nWifis > m_nSinks, "Sinks must be less or equal to the number of nodes in network");
 }
-
 
 void
 Project2m1n1::SetupMobility ()
@@ -277,8 +233,10 @@ Project2m1n1::SetupMobility ()
                                    << "]";
 
   Ptr <PositionAllocator> taPositionAlloc = pos.Create ()->GetObject <PositionAllocator> ();
- mobility.SetMobilityModel ("ns3::RandomWaypointMobilityModel", "Speed", StringValue (speedConstantRandomVariableStream.str ()),
-                             "Pause", StringValue ("ns3::ConstantRandomVariable[Constant=2.0]"), "PositionAllocator", PointerValue (taPositionAlloc));
+ mobility.SetMobilityModel ("ns3::RandomWaypointMobilityModel",
+                            "Speed", StringValue (speedConstantRandomVariableStream.str ()),
+                            "Pause", StringValue ("ns3::ConstantRandomVariable[Constant=0.0]"),
+                            "PositionAllocator", PointerValue (taPositionAlloc));
   mobility.SetPositionAllocator (taPositionAlloc);
   mobility.Install (nodes);
 }
@@ -308,6 +266,7 @@ void
 Project2m1n1::InstallInternetStack (std::string tr_name)
 {
   DsdvHelper dsdv;
+  dsdv.Set ("PeriodicUpdateInterval", TimeValue (Seconds (m_periodicUpdateInterval)));
   dsdv.Set ("SettlingTime", TimeValue (Seconds (m_settlingTime)));
   InternetStackHelper stack;
   stack.SetRoutingHelper (dsdv); // has effect on the next Install ()
@@ -332,7 +291,7 @@ Project2m1n1::InstallApplications ()
       Ptr<Socket> sink = SetupPacketReceive (nodeAddress, node);
     }
 
-  for (uint32_t clientNode = 0; clientNode <= m_nSources - 1; clientNode++ )
+  for (uint32_t clientNode = 0; clientNode <= m_nWifis - 1; clientNode++ )
     {
       for (uint32_t j = 0; j <= m_nSinks - 1; j++ )
         {
