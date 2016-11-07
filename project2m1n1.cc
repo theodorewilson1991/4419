@@ -6,6 +6,8 @@
 #include "ns3/wifi-module.h"
 #include "ns3/internet-module.h"
 #include "ns3/dsdv-helper.h"
+#include "ns3/flow-monitor-helper.h"
+
 #include <iostream>
 #include <cmath>
 
@@ -20,6 +22,7 @@ class Project2m1n1
 public:
   Project2m1n1 ();
   void CaseRun (uint32_t nWifis,
+                uint32_t nSources,
                 uint32_t nSinks,
                 double totalTime,
                 std::string rate,
@@ -33,6 +36,7 @@ public:
 
 private:
   uint32_t m_nWifis;
+  uint32_t m_nSources;
   uint32_t m_nSinks;
   double m_totalTime;
   std::string m_rate;
@@ -72,15 +76,16 @@ int main (int argc, char **argv)
 {
   Project2m1n1 test;
   uint32_t nWifis = 50;
-  uint32_t nSinks = 10; //number of transmitting nodes
-  double totalTime = 100.0;
+  uint32_t nSources= 10;//Number of transmitting nodes
+  uint32_t nSinks = 50; //recieving nodes
+  double totalTime = 120.0;
   std::string rate ("8kbps");
   std::string phyMode ("DsssRate11Mbps");
   uint32_t nodeSpeed = 1; // in m/s
   std::string appl = "all";
   uint32_t periodicUpdateInterval = 15;
   uint32_t settlingTime = 6;
-  double dataStart = 50.0;
+  double dataStart = 20.0;
   bool printRoutingTable = true;
   std::string CSVfileName = "Project2m1n1.csv";
 
@@ -114,7 +119,7 @@ int main (int argc, char **argv)
   Config::SetDefault ("ns3::WifiRemoteStationManager::RtsCtsThreshold", StringValue ("2000"));
 
   test = Project2m1n1 ();
-  test.CaseRun (nWifis, nSinks, totalTime, rate, phyMode, nodeSpeed, periodicUpdateInterval,
+  test.CaseRun (nWifis, nSources, nSinks, totalTime, rate, phyMode, nodeSpeed, periodicUpdateInterval,
                 settlingTime, dataStart, printRoutingTable, CSVfileName);
 
   return 0;
@@ -167,11 +172,12 @@ Project2m1n1::SetupPacketReceive (Ipv4Address addr, Ptr <Node> node)
 }
 
 void
-Project2m1n1::CaseRun (uint32_t nWifis, uint32_t nSinks, double totalTime, std::string rate,
+Project2m1n1::CaseRun (uint32_t nWifis, uint32_t nSources, uint32_t nSinks, double totalTime, std::string rate,
                            std::string phyMode, uint32_t nodeSpeed, uint32_t periodicUpdateInterval, uint32_t settlingTime,
                            double dataStart, bool printRoutes, std::string CSVfileName)
 {
   m_nWifis = nWifis;
+  m_nSources = nSources;
   m_nSinks = nSinks;
   m_totalTime = totalTime;
   m_rate = rate;
@@ -184,14 +190,14 @@ Project2m1n1::CaseRun (uint32_t nWifis, uint32_t nSinks, double totalTime, std::
   m_CSVfileName = CSVfileName;
 
   std::stringstream ss;
-  ss << m_nWifis;
+  ss << m_nSources;
   std::string t_nodes = ss.str ();
 
   std::stringstream ss3;
   ss3 << m_totalTime;
   std::string sTotalTime = ss3.str ();
 
-  std::string tr_name = "Dsdv_Manet_" + t_nodes + "Nodes_" + sTotalTime + "SimTime";
+  std::string tr_name = "DsdvProject";
   std::cout << "Trace file generated is " << tr_name << ".tr\n";
 
   CreateNodes ();
@@ -202,11 +208,19 @@ Project2m1n1::CaseRun (uint32_t nWifis, uint32_t nSinks, double totalTime, std::
 
   std::cout << "\nStarting simulation for " << m_totalTime << " s ...\n";
 
+  Ptr<FlowMonitor> flowmon;
+  FlowMonitorHelper flowmonHelper;
+  flowmon = flowmonHelper.InstallAll ();
+
   CheckThroughput ();
   Simulator::Schedule(Seconds(1.0), &PrintTime);
 
+
+
   Simulator::Stop (Seconds (m_totalTime));
   Simulator::Run ();
+  flowmon->SerializeToXmlFile ((tr_name + ".flowmon").c_str(), false, false);
+
   Simulator::Destroy ();
 }
 
@@ -215,7 +229,7 @@ Project2m1n1::CreateNodes ()
 {
   std::cout << "Creating " << (unsigned) m_nWifis << " nodes.\n";
   nodes.Create (m_nWifis);
-  NS_ASSERT_MSG (m_nWifis > m_nSinks, "Sinks must be less or equal to the number of nodes in network");
+  //NS_ASSERT_MSG (m_nWifis > m_nSinks, "Sinks must be less or equal to the number of nodes in network");
 }
 
 void
@@ -291,7 +305,7 @@ Project2m1n1::InstallApplications ()
       Ptr<Socket> sink = SetupPacketReceive (nodeAddress, node);
     }
 
-  for (uint32_t clientNode = 0; clientNode <= m_nWifis - 1; clientNode++ )
+  for (uint32_t clientNode = 0; clientNode <= m_nSources - 1; clientNode++ )
     {
       for (uint32_t j = 0; j <= m_nSinks - 1; j++ )
         {
