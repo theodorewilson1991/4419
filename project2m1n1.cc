@@ -103,7 +103,7 @@ int main (int argc, char **argv)
   cmd.AddValue ("CSVfileName", "The name of the CSV output file name[Default:Project2m1n1.csv]", CSVfileName);
   cmd.Parse (argc, argv);
 
-  std::ofstream out (CSVfileName.c_str ());
+  std::ofstream out (throughput.c_str ());
   out << "SimulationSecond," <<
   "ReceiveRate," <<
   "PacketsReceived," <<
@@ -197,7 +197,7 @@ Project2m1n1::CaseRun (uint32_t nWifis, uint32_t nSources, uint32_t nSinks, doub
   ss3 << m_totalTime;
   std::string sTotalTime = ss3.str ();
 
-  std::string tr_name = "DsdvProject";
+  std::string tr_name = "DsdvProjectTrace";
   std::cout << "Trace file generated is " << tr_name << ".tr\n";
 
   CreateNodes ();
@@ -208,11 +208,11 @@ Project2m1n1::CaseRun (uint32_t nWifis, uint32_t nSources, uint32_t nSinks, doub
 
   std::cout << "\nStarting simulation for " << m_totalTime << " s ...\n";
 
-  Ptr<FlowMonitor> flowmon;
-  FlowMonitorHelper flowmonHelper;
-  flowmon = flowmonHelper.InstallAll ();
-  flowmon->SetAttribute ("DelayBinWidth", DoubleValue(0.001));
-  flowmon->SetAttribute ("JitterBinWidth",DoubleValue (0.001));
+  // Ptr<FlowMonitor> flowmon;
+  // FlowMonitorHelper flowmonHelper;
+  // flowmon = flowmonHelper.InstallAll ();
+  // flowmon->SetAttribute ("DelayBinWidth", DoubleValue(0.001));
+  // flowmon->SetAttribute ("JitterBinWidth",DoubleValue (0.001));
 
   CheckThroughput ();
   Simulator::Schedule(Seconds(1.0), &PrintTime);
@@ -221,7 +221,7 @@ Project2m1n1::CaseRun (uint32_t nWifis, uint32_t nSources, uint32_t nSinks, doub
 
   Simulator::Stop (Seconds (m_totalTime));
   Simulator::Run ();
-  flowmon->SerializeToXmlFile ((tr_name + ".flowmon").c_str(), true, true);
+  // flowmon->SerializeToXmlFile ((tr_name + ".flowmon").c_str(), true, true);
 
   Simulator::Destroy ();
 }
@@ -273,8 +273,8 @@ Project2m1n1::CreateDevices (std::string tr_name)
                                 StringValue (m_phyMode));
   devices = wifi.Install (wifiPhy, wifiMac, nodes);
 
-  //AsciiTraceHelper ascii;
-  //wifiPhy.EnableAsciiAll (ascii.CreateFileStream (tr_name + ".tr"));
+  AsciiTraceHelper ascii;
+  wifiPhy.EnableAsciiAll (ascii.CreateFileStream (tr_name + ".tr"));
   wifiPhy.EnablePcapAll (tr_name);
 }
 
