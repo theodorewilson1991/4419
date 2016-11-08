@@ -103,7 +103,7 @@ int main (int argc, char **argv)
   cmd.AddValue ("CSVfileName", "The name of the CSV output file name[Default:Project2m1n1.csv]", CSVfileName);
   cmd.Parse (argc, argv);
 
-  std::ofstream out (throughput.c_str ());
+  std::ofstream out (CSVfileName.c_str ());
   out << "SimulationSecond," <<
   "ReceiveRate," <<
   "PacketsReceived," <<
