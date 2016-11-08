@@ -792,23 +792,11 @@ RoutingProtocol::RecvDsdv (Ptr<Socket> socket)
 void
 RoutingProtocol::SendTriggeredUpdate ()
 {
-  if(
-     m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.35")||
-     m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.36")||
-     m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.37")||
-     m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.38")||
-     m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.39")||
-     m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.40")||
-     m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.41")||
-     m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.42")||
-     m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.43")||
-     m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.44")||
-     m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.45")||
-     m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.46")||
-     m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.47")||
-     m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.48")||
-     m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.49")
-    ){
+
+    //To get address of the node
+    uint8_t nodeIPbuff[4];
+    m_mainAddress.Serialize(nodeIPbuff); 
+    if (nodeIPbuff[3] <= 34) { //Nodes with addresses ending 35 and above don't send
 
   NS_LOG_FUNCTION (m_mainAddress << " is sending a triggered update");
   std::map<Ipv4Address, RoutingTableEntry> allRoutes;
@@ -885,23 +873,11 @@ RoutingProtocol::SendTriggeredUpdate ()
 void
 RoutingProtocol::SendPeriodicUpdate ()
 {
-  if(  
-      m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.35")||
-      m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.36")||
-      m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.37")||
-      m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.38")||
-      m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.39")||
-      m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.40")||
-      m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.41")||
-      m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.42")||
-      m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.43")||
-      m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.44")||
-      m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.45")||
-      m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.46")||
-      m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.47")||
-      m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.48")||
-      m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.49")
-    ){
+    //To get address of the node
+    uint8_t nodeIPbuff[4];
+    m_mainAddress.Serialize(nodeIPbuff); 
+    if (nodeIPbuff[3] <= 34) { //Nodes with addresses ending 35 and above don't send
+
   std::map<Ipv4Address, RoutingTableEntry> removedAddresses, allRoutes;
   m_routingTable.Purge (removedAddresses);
   MergeTriggerPeriodicUpdates ();
