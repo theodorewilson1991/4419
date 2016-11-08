@@ -792,7 +792,13 @@ RoutingProtocol::RecvDsdv (Ptr<Socket> socket)
 void
 RoutingProtocol::SendTriggeredUpdate ()
 {
-  if(m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.40")||
+  if(
+     m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.35")||
+     m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.36")||
+     m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.37")||
+     m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.38")||
+     m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.39")||
+     m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.40")||
      m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.41")||
      m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.42")||
      m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.43")||
@@ -879,16 +885,22 @@ RoutingProtocol::SendTriggeredUpdate ()
 void
 RoutingProtocol::SendPeriodicUpdate ()
 {
-  if(m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.40")||
-     m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.41")||
-     m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.42")||
-     m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.43")||
-     m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.44")||
-     m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.45")||
-     m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.46")||
-     m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.47")||
-     m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.48")||
-     m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.49")
+  if(  
+      m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.35")||
+      m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.36")||
+      m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.37")||
+      m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.38")||
+      m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.39")||
+      m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.40")||
+      m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.41")||
+      m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.42")||
+      m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.43")||
+      m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.44")||
+      m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.45")||
+      m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.46")||
+      m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.47")||
+      m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.48")||
+      m_ipv4->GetAddress (0,0).GetLocal ()!= Ipv4Address ("10.1.1.49")
     ){
   std::map<Ipv4Address, RoutingTableEntry> removedAddresses, allRoutes;
   m_routingTable.Purge (removedAddresses);
