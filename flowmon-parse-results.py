@@ -130,14 +130,14 @@ def main(argv):
     print " done."
 
     out = open('out.csv', 'w')
-    out.write('Transmitted Birate(kbps),Recieved Bitrate(kbps),Average Delay(ms),Total Packet Loss Ratio (%) \n')
+    out.write('FlowID:,Source IP:,Source Port:,Destination IP:,Destination Port:,Transmitted Birate(kbps),Recieved Bitrate(kbps),Average Delay(ms),Total Packet Loss Ratio (%) \n')
     for sim in sim_list:
         for flow in sim.flows:
             t = flow.fiveTuple
             proto = {6: 'TCP', 17: 'UDP'}[t.protocol]
 
             print "FlowID: %i (%s %s/%s --> %s/%i)" % (flow.flowId, proto, t.sourceAddress, t.sourcePort, t.destinationAddress, t.destinationPort)
-            out.write('FlowID: %i,Source: %s %s/%s,Destination: %s/%i \n' % (flow.flowId, proto, t.sourceAddress, t.sourcePort, t.destinationAddress, t.destinationPort))
+            out.write('%i, %s,%s, %s,%i,' % (flow.flowId, t.sourceAddress, t.sourcePort, t.destinationAddress, t.destinationPort))
 
 
             if flow.txBitrate is None:
@@ -165,12 +165,7 @@ def main(argv):
                 print "\tPacket Loss Ratio: %.2f %%" % (flow.packetLossRatio*100)
                 out.write('%.2f,' %(flow.packetLossRatio*100))
             out.write('\n')
-            # out = open('out.csv', 'w')
-            # for row in l:
-            #     for column in row:
-            #         out.write('%d;' % column)
-            #     out.write('\n')
-            # out.close()
+
 
 if __name__ == '__main__':
     main(sys.argv)
