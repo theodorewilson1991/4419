@@ -1,0 +1,950 @@
+Node:		 0
+Sent packets: 	3369
+Received packets: 	91637
+Dropped packets: 	0
+Data sent: 		2.5616493225097656 MB
+Data received: 	43.3714714050293 MB
+Data dropped: 	0.0 B
+Throughput: 		22384.033333333333 B
+Goodput: 		21691.666666666668 B
+Lambda: 		28.075
+EN: 		0.0
+EW: 		0.0
+Little's result:
+  -> EN:		0.0
+  -> EW*lambda:	0.0
+Average length of:
+  -> Sent packets: 	797.0 B
+  -> Received packets: 	496.0 B
+
+Node:		 1
+Sent packets: 	6367
+Received packets: 	105247
+Dropped packets: 	0
+Data sent: 		5.001472473144531 MB
+Data received: 	54.82193374633789 MB
+Data dropped: 	0.0 B
+Throughput: 		43703.53333333333 B
+Goodput: 		42391.666666666664 B
+Lambda: 		53.05833333333333
+EN: 		0.0
+EW: 		0.0
+Little's result:
+  -> EN:		0.0
+  -> EW*lambda:	0.0
+Average length of:
+  -> Sent packets: 	823.0 B
+  -> Received packets: 	546.0 B
+
+Node:		 2
+Sent packets: 	4954
+Received packets: 	101996
+Dropped packets: 	0
+Data sent: 		3.8293724060058594 MB
+Data received: 	53.257476806640625 MB
+Data dropped: 	0.0 B
+Throughput: 		33461.566666666666 B
+Goodput: 		32408.333333333332 B
+Lambda: 		41.28333333333333
+EN: 		0.0
+EW: 		0.0
+Little's result:
+  -> EN:		0.0
+  -> EW*lambda:	0.0
+Average length of:
+  -> Sent packets: 	810.0 B
+  -> Received packets: 	547.0 B
+
+Node:		 3
+Sent packets: 	6460
+Received packets: 	104562
+Dropped packets: 	0
+Data sent: 		4.933658599853516 MB
+Data received: 	54.233768463134766 MB
+Data dropped: 	0.0 B
+Throughput: 		43110.96666666667 B
+Goodput: 		41791.666666666664 B
+Lambda: 		53.833333333333336
+EN: 		0.0
+EW: 		0.0
+Little's result:
+  -> EN:		0.0
+  -> EW*lambda:	0.0
+Average length of:
+  -> Sent packets: 	800.0 B
+  -> Received packets: 	543.0 B
+
+Node:		 4
+Sent packets: 	4150
+Received packets: 	89709
+Dropped packets: 	0
+Data sent: 		3.0639266967773438 MB
+Data received: 	42.484188079833984 MB
+Data dropped: 	0.0 B
+Throughput: 		26773.0 B
+Goodput: 		25966.666666666668 B
+Lambda: 		34.583333333333336
+EN: 		0.0
+EW: 		0.0
+Little's result:
+  -> EN:		0.0
+  -> EW*lambda:	0.0
+Average length of:
+  -> Sent packets: 	774.0 B
+  -> Received packets: 	496.0 B
+
+Node:		 5
+Sent packets: 	5261
+Received packets: 	103157
+Dropped packets: 	0
+Data sent: 		3.954212188720703 MB
+Data received: 	53.32517623901367 MB
+Data dropped: 	0.0 B
+Throughput: 		34552.433333333334 B
+Goodput: 		33466.666666666664 B
+Lambda: 		43.84166666666667
+EN: 		0.0
+EW: 		0.0
+Little's result:
+  -> EN:		0.0
+  -> EW*lambda:	0.0
+Average length of:
+  -> Sent packets: 	788.0 B
+  -> Received packets: 	542.0 B
+
+Node:		 6
+Sent packets: 	5354
+Received packets: 	102871
+Dropped packets: 	0
+Data sent: 		4.133419036865234 MB
+Data received: 	52.619346618652344 MB
+Data dropped: 	0.0 B
+Throughput: 		36118.36666666667 B
+Goodput: 		35016.666666666664 B
+Lambda: 		44.61666666666667
+EN: 		0.0
+EW: 		0.0
+Little's result:
+  -> EN:		0.0
+  -> EW*lambda:	0.0
+Average length of:
+  -> Sent packets: 	809.0 B
+  -> Received packets: 	536.0 B
+
+Node:		 7
+Sent packets: 	3260
+Received packets: 	89074
+Dropped packets: 	0
+Data sent: 		2.3354454040527344 MB
+Data received: 	42.92134475708008 MB
+Data dropped: 	0.0 B
+Throughput: 		20407.433333333334 B
+Goodput: 		19758.333333333332 B
+Lambda: 		27.166666666666668
+EN: 		0.0
+EW: 		0.0
+Little's result:
+  -> EN:		0.0
+  -> EW*lambda:	0.0
+Average length of:
+  -> Sent packets: 	751.0 B
+  -> Received packets: 	505.0 B
+
+Node:		 8
+Sent packets: 	6113
+Received packets: 	101461
+Dropped packets: 	0
+Data sent: 		4.671787261962891 MB
+Data received: 	51.400062561035156 MB
+Data dropped: 	0.0 B
+Throughput: 		40822.7 B
+Goodput: 		39558.333333333336 B
+Lambda: 		50.94166666666667
+EN: 		0.0
+EW: 		0.0
+Little's result:
+  -> EN:		0.0
+  -> EW*lambda:	0.0
+Average length of:
+  -> Sent packets: 	801.0 B
+  -> Received packets: 	531.0 B
+
+Node:		 9
+Sent packets: 	5302
+Received packets: 	102303
+Dropped packets: 	0
+Data sent: 		4.001152038574219 MB
+Data received: 	51.53409194946289 MB
+Data dropped: 	0.0 B
+Throughput: 		34962.6 B
+Goodput: 		33916.666666666664 B
+Lambda: 		44.18333333333333
+EN: 		0.0
+EW: 		0.0
+Little's result:
+  -> EN:		0.0
+  -> EW*lambda:	0.0
+Average length of:
+  -> Sent packets: 	791.0 B
+  -> Received packets: 	528.0 B
+
+Node:		 10
+Sent packets: 	5091
+Received packets: 	109358
+Dropped packets: 	0
+Data sent: 		4.113563537597656 MB
+Data received: 	57.86294174194336 MB
+Data dropped: 	0.0 B
+Throughput: 		35944.86666666667 B
+Goodput: 		34783.333333333336 B
+Lambda: 		42.425
+EN: 		0.0
+EW: 		0.0
+Little's result:
+  -> EN:		0.0
+  -> EW*lambda:	0.0
+Average length of:
+  -> Sent packets: 	847.0 B
+  -> Received packets: 	554.0 B
+
+Node:		 11
+Sent packets: 	4405
+Received packets: 	106737
+Dropped packets: 	0
+Data sent: 		3.252788543701172 MB
+Data received: 	56.22396469116211 MB
+Data dropped: 	0.0 B
+Throughput: 		28423.3 B
+Goodput: 		27483.333333333332 B
+Lambda: 		36.708333333333336
+EN: 		0.0
+EW: 		0.0
+Little's result:
+  -> EN:		0.0
+  -> EW*lambda:	0.0
+Average length of:
+  -> Sent packets: 	774.0 B
+  -> Received packets: 	552.0 B
+
+Node:		 12
+Sent packets: 	5017
+Received packets: 	102887
+Dropped packets: 	0
+Data sent: 		3.9340286254882812 MB
+Data received: 	52.93238830566406 MB
+Data dropped: 	0.0 B
+Throughput: 		34376.066666666666 B
+Goodput: 		33291.666666666664 B
+Lambda: 		41.80833333333333
+EN: 		0.0
+EW: 		0.0
+Little's result:
+  -> EN:		0.0
+  -> EW*lambda:	0.0
+Average length of:
+  -> Sent packets: 	822.0 B
+  -> Received packets: 	539.0 B
+
+Node:		 13
+Sent packets: 	4800
+Received packets: 	103252
+Dropped packets: 	0
+Data sent: 		3.9843978881835938 MB
+Data received: 	52.60231018066406 MB
+Data dropped: 	0.0 B
+Throughput: 		34816.2 B
+Goodput: 		33708.333333333336 B
+Lambda: 		40.0
+EN: 		0.0
+EW: 		0.0
+Little's result:
+  -> EN:		0.0
+  -> EW*lambda:	0.0
+Average length of:
+  -> Sent packets: 	870.0 B
+  -> Received packets: 	534.0 B
+
+Node:		 14
+Sent packets: 	4279
+Received packets: 	90929
+Dropped packets: 	0
+Data sent: 		3.1796226501464844 MB
+Data received: 	44.49662780761719 MB
+Data dropped: 	0.0 B
+Throughput: 		27783.966666666667 B
+Goodput: 		26958.333333333332 B
+Lambda: 		35.65833333333333
+EN: 		0.0
+EW: 		0.0
+Little's result:
+  -> EN:		0.0
+  -> EW*lambda:	0.0
+Average length of:
+  -> Sent packets: 	779.0 B
+  -> Received packets: 	513.0 B
+
+Node:		 15
+Sent packets: 	4923
+Received packets: 	100041
+Dropped packets: 	0
+Data sent: 		3.6546173095703125 MB
+Data received: 	51.017333984375 MB
+Data dropped: 	0.0 B
+Throughput: 		31934.533333333333 B
+Goodput: 		30933.333333333332 B
+Lambda: 		41.025
+EN: 		0.0
+EW: 		0.0
+Little's result:
+  -> EN:		0.0
+  -> EW*lambda:	0.0
+Average length of:
+  -> Sent packets: 	778.0 B
+  -> Received packets: 	534.0 B
+
+Node:		 16
+Sent packets: 	4378
+Received packets: 	100629
+Dropped packets: 	0
+Data sent: 		3.3698463439941406 MB
+Data received: 	50.63868713378906 MB
+Data dropped: 	0.0 B
+Throughput: 		29446.166666666668 B
+Goodput: 		28491.666666666668 B
+Lambda: 		36.483333333333334
+EN: 		0.0
+EW: 		0.0
+Little's result:
+  -> EN:		0.0
+  -> EW*lambda:	0.0
+Average length of:
+  -> Sent packets: 	807.0 B
+  -> Received packets: 	527.0 B
+
+Node:		 17
+Sent packets: 	3172
+Received packets: 	100207
+Dropped packets: 	0
+Data sent: 		2.324615478515625 MB
+Data received: 	50.445621490478516 MB
+Data dropped: 	0.0 B
+Throughput: 		20312.8 B
+Goodput: 		19600.0 B
+Lambda: 		26.433333333333334
+EN: 		0.0
+EW: 		0.0
+Little's result:
+  -> EN:		0.0
+  -> EW*lambda:	0.0
+Average length of:
+  -> Sent packets: 	768.0 B
+  -> Received packets: 	527.0 B
+
+Node:		 18
+Sent packets: 	3770
+Received packets: 	96532
+Dropped packets: 	0
+Data sent: 		2.9590377807617188 MB
+Data received: 	47.60836410522461 MB
+Data dropped: 	0.0 B
+Throughput: 		25856.466666666667 B
+Goodput: 		25041.666666666668 B
+Lambda: 		31.416666666666668
+EN: 		0.0
+EW: 		0.0
+Little's result:
+  -> EN:		0.0
+  -> EW*lambda:	0.0
+Average length of:
+  -> Sent packets: 	823.0 B
+  -> Received packets: 	517.0 B
+
+Node:		 19
+Sent packets: 	4473
+Received packets: 	97169
+Dropped packets: 	0
+Data sent: 		3.4558029174804688 MB
+Data received: 	49.09211349487305 MB
+Data dropped: 	0.0 B
+Throughput: 		30197.266666666666 B
+Goodput: 		29241.666666666668 B
+Lambda: 		37.275
+EN: 		0.0
+EW: 		0.0
+Little's result:
+  -> EN:		0.0
+  -> EW*lambda:	0.0
+Average length of:
+  -> Sent packets: 	810.0 B
+  -> Received packets: 	529.0 B
+
+Node:		 20
+Sent packets: 	1459
+Received packets: 	103248
+Dropped packets: 	0
+Data sent: 		30.09765625 KB
+Data received: 	53.39528274536133 MB
+Data dropped: 	0.0 B
+Throughput: 		256.8333333333333 B
+Goodput: 		0.0 B
+Lambda: 		12.158333333333333
+EN: 		0.0
+EW: 		0.0
+Little's result:
+  -> EN:		0.0
+  -> EW*lambda:	0.0
+Average length of:
+  -> Sent packets: 	21.0 B
+  -> Received packets: 	542.0 B
+
+Node:		 21
+Sent packets: 	1540
+Received packets: 	103221
+Dropped packets: 	0
+Data sent: 		49.00390625 KB
+Data received: 	53.98004150390625 MB
+Data dropped: 	0.0 B
+Throughput: 		418.1666666666667 B
+Goodput: 		158.33333333333334 B
+Lambda: 		12.833333333333334
+EN: 		0.0
+EW: 		0.0
+Little's result:
+  -> EN:		0.0
+  -> EW*lambda:	0.0
+Average length of:
+  -> Sent packets: 	32.0 B
+  -> Received packets: 	548.0 B
+
+Node:		 22
+Sent packets: 	1318
+Received packets: 	102230
+Dropped packets: 	0
+Data sent: 		140.9140625 KB
+Data received: 	53.600826263427734 MB
+Data dropped: 	0.0 B
+Throughput: 		1202.4666666666667 B
+Goodput: 		925.0 B
+Lambda: 		10.983333333333333
+EN: 		0.0
+EW: 		0.0
+Little's result:
+  -> EN:		0.0
+  -> EW*lambda:	0.0
+Average length of:
+  -> Sent packets: 	109.0 B
+  -> Received packets: 	549.0 B
+
+Node:		 23
+Sent packets: 	1246
+Received packets: 	97407
+Dropped packets: 	0
+Data sent: 		31.68359375 KB
+Data received: 	48.58823776245117 MB
+Data dropped: 	0.0 B
+Throughput: 		270.3666666666667 B
+Goodput: 		16.666666666666668 B
+Lambda: 		10.383333333333333
+EN: 		0.0
+EW: 		0.0
+Little's result:
+  -> EN:		0.0
+  -> EW*lambda:	0.0
+Average length of:
+  -> Sent packets: 	26.0 B
+  -> Received packets: 	523.0 B
+
+Node:		 24
+Sent packets: 	1408
+Received packets: 	95229
+Dropped packets: 	0
+Data sent: 		66.703125 KB
+Data received: 	47.952247619628906 MB
+Data dropped: 	0.0 B
+Throughput: 		569.2 B
+Goodput: 		316.6666666666667 B
+Lambda: 		11.733333333333333
+EN: 		0.0
+EW: 		0.0
+Little's result:
+  -> EN:		0.0
+  -> EW*lambda:	0.0
+Average length of:
+  -> Sent packets: 	48.0 B
+  -> Received packets: 	528.0 B
+
+Node:		 25
+Sent packets: 	1305
+Received packets: 	111655
+Dropped packets: 	0
+Data sent: 		50.4921875 KB
+Data received: 	60.53606414794922 MB
+Data dropped: 	0.0 B
+Throughput: 		430.8666666666667 B
+Goodput: 		175.0 B
+Lambda: 		10.875
+EN: 		0.0
+EW: 		0.0
+Little's result:
+  -> EN:		0.0
+  -> EW*lambda:	0.0
+Average length of:
+  -> Sent packets: 	39.0 B
+  -> Received packets: 	568.0 B
+
+Node:		 26
+Sent packets: 	1794
+Received packets: 	98249
+Dropped packets: 	0
+Data sent: 		283.15625 KB
+Data received: 	49.818336486816406 MB
+Data dropped: 	0.0 B
+Throughput: 		2416.266666666667 B
+Goodput: 		2125.0 B
+Lambda: 		14.95
+EN: 		0.0
+EW: 		0.0
+Little's result:
+  -> EN:		0.0
+  -> EW*lambda:	0.0
+Average length of:
+  -> Sent packets: 	161.0 B
+  -> Received packets: 	531.0 B
+
+Node:		 27
+Sent packets: 	1206
+Received packets: 	106018
+Dropped packets: 	0
+Data sent: 		32.98046875 KB
+Data received: 	55.41011047363281 MB
+Data dropped: 	0.0 B
+Throughput: 		281.43333333333334 B
+Goodput: 		33.333333333333336 B
+Lambda: 		10.05
+EN: 		0.0
+EW: 		0.0
+Little's result:
+  -> EN:		0.0
+  -> EW*lambda:	0.0
+Average length of:
+  -> Sent packets: 	28.0 B
+  -> Received packets: 	548.0 B
+
+Node:		 28
+Sent packets: 	1591
+Received packets: 	104600
+Dropped packets: 	0
+Data sent: 		195.57421875 KB
+Data received: 	54.787879943847656 MB
+Data dropped: 	0.0 B
+Throughput: 		1668.9 B
+Goodput: 		1383.3333333333333 B
+Lambda: 		13.258333333333333
+EN: 		0.0
+EW: 		0.0
+Little's result:
+  -> EN:		0.0
+  -> EW*lambda:	0.0
+Average length of:
+  -> Sent packets: 	125.0 B
+  -> Received packets: 	549.0 B
+
+Node:		 29
+Sent packets: 	1665
+Received packets: 	100416
+Dropped packets: 	0
+Data sent: 		167.296875 KB
+Data received: 	51.823974609375 MB
+Data dropped: 	0.0 B
+Throughput: 		1427.6 B
+Goodput: 		1141.6666666666667 B
+Lambda: 		13.875
+EN: 		0.0
+EW: 		0.0
+Little's result:
+  -> EN:		0.0
+  -> EW*lambda:	0.0
+Average length of:
+  -> Sent packets: 	102.0 B
+  -> Received packets: 	541.0 B
+
+Node:		 30
+Sent packets: 	1810
+Received packets: 	106775
+Dropped packets: 	0
+Data sent: 		93.40234375 KB
+Data received: 	57.050559997558594 MB
+Data dropped: 	0.0 B
+Throughput: 		797.0333333333333 B
+Goodput: 		525.0 B
+Lambda: 		15.083333333333334
+EN: 		0.0
+EW: 		0.0
+Little's result:
+  -> EN:		0.0
+  -> EW*lambda:	0.0
+Average length of:
+  -> Sent packets: 	52.0 B
+  -> Received packets: 	560.0 B
+
+Node:		 31
+Sent packets: 	1290
+Received packets: 	97362
+Dropped packets: 	0
+Data sent: 		42.40625 KB
+Data received: 	48.365169525146484 MB
+Data dropped: 	0.0 B
+Throughput: 		361.8666666666667 B
+Goodput: 		108.33333333333333 B
+Lambda: 		10.75
+EN: 		0.0
+EW: 		0.0
+Little's result:
+  -> EN:		0.0
+  -> EW*lambda:	0.0
+Average length of:
+  -> Sent packets: 	33.0 B
+  -> Received packets: 	520.0 B
+
+Node:		 32
+Sent packets: 	1498
+Received packets: 	92645
+Dropped packets: 	0
+Data sent: 		107.68359375 KB
+Data received: 	47.001441955566406 MB
+Data dropped: 	0.0 B
+Throughput: 		918.9 B
+Goodput: 		633.3333333333334 B
+Lambda: 		12.483333333333333
+EN: 		0.0
+EW: 		0.0
+Little's result:
+  -> EN:		0.0
+  -> EW*lambda:	0.0
+Average length of:
+  -> Sent packets: 	73.0 B
+  -> Received packets: 	531.0 B
+
+Node:		 33
+Sent packets: 	1660
+Received packets: 	108335
+Dropped packets: 	0
+Data sent: 		153.23046875 KB
+Data received: 	58.862266540527344 MB
+Data dropped: 	0.0 B
+Throughput: 		1307.5666666666666 B
+Goodput: 		1033.3333333333333 B
+Lambda: 		13.833333333333334
+EN: 		0.0
+EW: 		0.0
+Little's result:
+  -> EN:		0.0
+  -> EW*lambda:	0.0
+Average length of:
+  -> Sent packets: 	94.0 B
+  -> Received packets: 	569.0 B
+
+Node:		 34
+Sent packets: 	1577
+Received packets: 	101405
+Dropped packets: 	0
+Data sent: 		51.87890625 KB
+Data received: 	52.13082504272461 MB
+Data dropped: 	0.0 B
+Throughput: 		442.7 B
+Goodput: 		183.33333333333334 B
+Lambda: 		13.141666666666667
+EN: 		0.0
+EW: 		0.0
+Little's result:
+  -> EN:		0.0
+  -> EW*lambda:	0.0
+Average length of:
+  -> Sent packets: 	33.0 B
+  -> Received packets: 	539.0 B
+
+Node:		 35
+Sent packets: 	1436
+Received packets: 	86123
+Dropped packets: 	0
+Data sent: 		56.50390625 KB
+Data received: 	39.00241470336914 MB
+Data dropped: 	0.0 B
+Throughput: 		482.1666666666667 B
+Goodput: 		216.66666666666666 B
+Lambda: 		11.966666666666667
+EN: 		0.0
+EW: 		0.0
+Little's result:
+  -> EN:		0.0
+  -> EW*lambda:	0.0
+Average length of:
+  -> Sent packets: 	40.0 B
+  -> Received packets: 	474.0 B
+
+Node:		 36
+Sent packets: 	1701
+Received packets: 	104185
+Dropped packets: 	0
+Data sent: 		93.8515625 KB
+Data received: 	53.90620040893555 MB
+Data dropped: 	0.0 B
+Throughput: 		800.8666666666667 B
+Goodput: 		541.6666666666666 B
+Lambda: 		14.175
+EN: 		0.0
+EW: 		0.0
+Little's result:
+  -> EN:		0.0
+  -> EW*lambda:	0.0
+Average length of:
+  -> Sent packets: 	56.0 B
+  -> Received packets: 	542.0 B
+
+Node:		 37
+Sent packets: 	1433
+Received packets: 	110327
+Dropped packets: 	0
+Data sent: 		36.86328125 KB
+Data received: 	59.25054168701172 MB
+Data dropped: 	0.0 B
+Throughput: 		314.56666666666666 B
+Goodput: 		66.66666666666667 B
+Lambda: 		11.941666666666666
+EN: 		0.0
+EW: 		0.0
+Little's result:
+  -> EN:		0.0
+  -> EW*lambda:	0.0
+Average length of:
+  -> Sent packets: 	26.0 B
+  -> Received packets: 	563.0 B
+
+Node:		 38
+Sent packets: 	1439
+Received packets: 	103601
+Dropped packets: 	0
+Data sent: 		31.46875 KB
+Data received: 	53.962398529052734 MB
+Data dropped: 	0.0 B
+Throughput: 		268.53333333333336 B
+Goodput: 		16.666666666666668 B
+Lambda: 		11.991666666666667
+EN: 		0.0
+EW: 		0.0
+Little's result:
+  -> EN:		0.0
+  -> EW*lambda:	0.0
+Average length of:
+  -> Sent packets: 	22.0 B
+  -> Received packets: 	546.0 B
+
+Node:		 39
+Sent packets: 	1405
+Received packets: 	93727
+Dropped packets: 	0
+Data sent: 		52.12890625 KB
+Data received: 	46.36630630493164 MB
+Data dropped: 	0.0 B
+Throughput: 		444.8333333333333 B
+Goodput: 		183.33333333333334 B
+Lambda: 		11.708333333333334
+EN: 		0.0
+EW: 		0.0
+Little's result:
+  -> EN:		0.0
+  -> EW*lambda:	0.0
+Average length of:
+  -> Sent packets: 	37.0 B
+  -> Received packets: 	518.0 B
+
+Node:		 40
+Sent packets: 	1480
+Received packets: 	108010
+Dropped packets: 	0
+Data sent: 		127.61328125 KB
+Data received: 	57.37120056152344 MB
+Data dropped: 	0.0 B
+Throughput: 		1088.9666666666667 B
+Goodput: 		816.6666666666666 B
+Lambda: 		12.333333333333334
+EN: 		0.0
+EW: 		0.0
+Little's result:
+  -> EN:		0.0
+  -> EW*lambda:	0.0
+Average length of:
+  -> Sent packets: 	88.0 B
+  -> Received packets: 	556.0 B
+
+Node:		 41
+Sent packets: 	1706
+Received packets: 	112182
+Dropped packets: 	0
+Data sent: 		57.67578125 KB
+Data received: 	61.09525680541992 MB
+Data dropped: 	0.0 B
+Throughput: 		492.1666666666667 B
+Goodput: 		241.66666666666666 B
+Lambda: 		14.216666666666667
+EN: 		0.0
+EW: 		0.0
+Little's result:
+  -> EN:		0.0
+  -> EW*lambda:	0.0
+Average length of:
+  -> Sent packets: 	34.0 B
+  -> Received packets: 	571.0 B
+
+Node:		 42
+Sent packets: 	1441
+Received packets: 	94255
+Dropped packets: 	0
+Data sent: 		42.98828125 KB
+Data received: 	46.7956657409668 MB
+Data dropped: 	0.0 B
+Throughput: 		366.8333333333333 B
+Goodput: 		108.33333333333333 B
+Lambda: 		12.008333333333333
+EN: 		0.0
+EW: 		0.0
+Little's result:
+  -> EN:		0.0
+  -> EW*lambda:	0.0
+Average length of:
+  -> Sent packets: 	30.0 B
+  -> Received packets: 	520.0 B
+
+Node:		 43
+Sent packets: 	1654
+Received packets: 	101382
+Dropped packets: 	0
+Data sent: 		65.984375 KB
+Data received: 	52.1168327331543 MB
+Data dropped: 	0.0 B
+Throughput: 		563.0666666666667 B
+Goodput: 		308.3333333333333 B
+Lambda: 		13.783333333333333
+EN: 		0.0
+EW: 		0.0
+Little's result:
+  -> EN:		0.0
+  -> EW*lambda:	0.0
+Average length of:
+  -> Sent packets: 	40.0 B
+  -> Received packets: 	539.0 B
+
+Node:		 44
+Sent packets: 	1363
+Received packets: 	106019
+Dropped packets: 	0
+Data sent: 		33.921875 KB
+Data received: 	55.966453552246094 MB
+Data dropped: 	0.0 B
+Throughput: 		289.46666666666664 B
+Goodput: 		41.666666666666664 B
+Lambda: 		11.358333333333333
+EN: 		0.0
+EW: 		0.0
+Little's result:
+  -> EN:		0.0
+  -> EW*lambda:	0.0
+Average length of:
+  -> Sent packets: 	25.0 B
+  -> Received packets: 	553.0 B
+
+Node:		 45
+Sent packets: 	1577
+Received packets: 	99678
+Dropped packets: 	0
+Data sent: 		243.70703125 KB
+Data received: 	50.66950225830078 MB
+Data dropped: 	0.0 B
+Throughput: 		2079.633333333333 B
+Goodput: 		1791.6666666666667 B
+Lambda: 		13.141666666666667
+EN: 		0.0
+EW: 		0.0
+Little's result:
+  -> EN:		0.0
+  -> EW*lambda:	0.0
+Average length of:
+  -> Sent packets: 	158.0 B
+  -> Received packets: 	533.0 B
+
+Node:		 46
+Sent packets: 	1613
+Received packets: 	112030
+Dropped packets: 	0
+Data sent: 		99.04296875 KB
+Data received: 	60.92972946166992 MB
+Data dropped: 	0.0 B
+Throughput: 		845.1666666666666 B
+Goodput: 		583.3333333333334 B
+Lambda: 		13.441666666666666
+EN: 		0.0
+EW: 		0.0
+Little's result:
+  -> EN:		0.0
+  -> EW*lambda:	0.0
+Average length of:
+  -> Sent packets: 	62.0 B
+  -> Received packets: 	570.0 B
+
+Node:		 47
+Sent packets: 	1500
+Received packets: 	106759
+Dropped packets: 	0
+Data sent: 		77.046875 KB
+Data received: 	56.75746154785156 MB
+Data dropped: 	0.0 B
+Throughput: 		657.4666666666667 B
+Goodput: 		391.6666666666667 B
+Lambda: 		12.5
+EN: 		0.0
+EW: 		0.0
+Little's result:
+  -> EN:		0.0
+  -> EW*lambda:	0.0
+Average length of:
+  -> Sent packets: 	52.0 B
+  -> Received packets: 	557.0 B
+
+Node:		 48
+Sent packets: 	1611
+Received packets: 	99045
+Dropped packets: 	0
+Data sent: 		99.59375 KB
+Data received: 	50.03359603881836 MB
+Data dropped: 	0.0 B
+Throughput: 		849.8666666666667 B
+Goodput: 		583.3333333333334 B
+Lambda: 		13.425
+EN: 		0.0
+EW: 		0.0
+Little's result:
+  -> EN:		0.0
+  -> EW*lambda:	0.0
+Average length of:
+  -> Sent packets: 	63.0 B
+  -> Received packets: 	529.0 B
+
+Node:		 49
+Sent packets: 	1675
+Received packets: 	105157
+Dropped packets: 	0
+Data sent: 		129.23828125 KB
+Data received: 	55.15750503540039 MB
+Data dropped: 	0.0 B
+Throughput: 		1102.8333333333333 B
+Goodput: 		833.3333333333334 B
+Lambda: 		13.958333333333334
+EN: 		0.0
+EW: 		0.0
+Little's result:
+  -> EN:		0.0
+  -> EW*lambda:	0.0
+Average length of:
+  -> Sent packets: 	79.0 B
+  -> Received packets: 	550.0 B
+
